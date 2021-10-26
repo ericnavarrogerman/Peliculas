@@ -9,7 +9,9 @@ import android.view.ViewGroup
 import com.example.wigilabsprueba.R
 import com.example.wigilabsprueba.databinding.MovieDetailsFragmentBinding
 import com.example.wigilabsprueba.features.movies.frameworks.presenter.viewmodels.MovieDetailsViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MovieDetailsFragment : Fragment() {
 
 

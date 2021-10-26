@@ -6,14 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.wigilabsprueba.R
 import com.example.wigilabsprueba.databinding.MoviesFragmentBinding
 import com.example.wigilabsprueba.features.movies.frameworks.presenter.viewmodels.MoviesViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MoviesFragment : Fragment() {
 
 
-    private lateinit var viewModel: MoviesViewModel
+    val model:MoviesViewModel by viewModels()
     lateinit var binding: MoviesFragmentBinding
 
     override fun onCreateView(
@@ -26,10 +29,13 @@ class MoviesFragment : Fragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MoviesViewModel::class.java)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        model.getMovies()
 
     }
+
 
 }

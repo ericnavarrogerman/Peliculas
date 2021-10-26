@@ -1,7 +1,11 @@
 package com.example.wigilabsprueba.features.movies.frameworks.presenter.viewmodels
 
 import androidx.lifecycle.ViewModel
+import com.example.wigilabsprueba.features.movies.interactors.GetMovieDetails
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MovieDetailsViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+@HiltViewModel
+class MovieDetailsViewModel @Inject constructor(var getDetails:GetMovieDetails): ViewModel() {
+
 }
