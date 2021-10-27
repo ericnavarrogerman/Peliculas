@@ -20,7 +20,8 @@ class Repository(
             var paging=localDatasource.findPaggin(1)
 
             var page=if (paging==null) 1 else paging.page+1
-            if (page>paging.total_pages){ throw PaginationFinished("There is no more data to show at the moment")}
+            var total_pages=if (paging==null) 500 else paging.total_pages
+            if (page>total_pages){ throw PaginationFinished("There is no more data to show at the moment")}
 
             var res = remoteDatasource.getAllPopularMoviesByPageId(page)
 

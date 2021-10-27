@@ -69,7 +69,6 @@ class AppDatabaseTest : TestCase() {
     }
 
     private fun getDataSimulate(): ArrayList<MoviesEntityRom> {
-
         return arrayListOf<MoviesEntityRom>(
             MoviesEntityRom(
                 1,

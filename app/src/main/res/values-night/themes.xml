@@ -13,4 +13,13 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="SplashTheme" parent="Theme.WigilabsPrueba">
+
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="Movies" parent="Theme.WigilabsPrueba">
+
+    </style>
 </resources>

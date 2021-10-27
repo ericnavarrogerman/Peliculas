@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/Wigilabsprueba/app/src/main/res/drawable-v24/splash.xml" value="0.1" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/Wigilabsprueba/app/src/main/res/drawable/ic_baseline_refresh_24.xml" value="0.30416666666666664" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/Wigilabsprueba/app/src/main/res/drawable/ic_baseline_wifi_off_24.xml" value="0.30416666666666664" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/Wigilabsprueba/app/src/main/res/layout/activity_main.xml" value="0.35625" />
