@@ -12,7 +12,7 @@ interface MoviesDao {
    @Query("SELECT * FROM Movies WHERE id_service=:id")
     fun findMovieById(id:Int): Flow<MoviesEntityRom>
 
-   @Query("SELECT * FROM Movies ORDER BY id_service")
+   @Query("SELECT * FROM Movies ORDER BY id")
     fun findAllMovies():Flow<List<MoviesEntityRom>>
 
    @Insert(onConflict = OnConflictStrategy.IGNORE)

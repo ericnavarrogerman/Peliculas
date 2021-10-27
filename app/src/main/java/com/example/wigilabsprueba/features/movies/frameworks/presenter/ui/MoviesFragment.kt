@@ -43,24 +43,18 @@ class MoviesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        model.getMovies()
         var adapterMovies = AdapterMovies(this)
         val decoration: RecyclerView.ItemDecoration =
             DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
-
 
         binding.rvMovies.apply {
             adapter = adapterMovies
             addItemDecoration(decoration)
         }
-
-
-
-        model.getMovies()
-
         model.result.observe(viewLifecycleOwner, Observer {
             validateFinal=true
-
+            binding.progressBar.visibility=View.GONE
             if(it is Result.Error){
                 var result = it as Result.Error
                 result.exception.message?.let { it1 ->
@@ -94,13 +88,10 @@ class MoviesFragment : Fragment() {
                     validateFinal=false
                     Log.e("prueba","llamado al servicio")
                     model.fecthFromWebService()
+                    binding.progressBar.visibility=View.VISIBLE
                 }
             }
         })
-
-
-
-
 
 
     }
