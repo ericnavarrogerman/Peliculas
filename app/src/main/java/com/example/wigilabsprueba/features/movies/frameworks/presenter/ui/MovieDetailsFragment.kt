@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.navArgs
 import com.example.wigilabsprueba.R
 import com.example.wigilabsprueba.databinding.MovieDetailsFragmentBinding
 import com.example.wigilabsprueba.features.movies.frameworks.presenter.viewmodels.MovieDetailsViewModel
@@ -15,7 +18,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class MovieDetailsFragment : Fragment() {
 
 
-    private lateinit var viewModel: MovieDetailsViewModel
+    val viewModel: MovieDetailsViewModel by viewModels()
+    val args:MovieDetailsFragmentArgs by navArgs()
     lateinit var binding: MovieDetailsFragmentBinding
 
     override fun onCreateView(
@@ -27,10 +31,14 @@ class MovieDetailsFragment : Fragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MovieDetailsViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.getMovieDetailsById(args.idMovie)
+        viewModel.result.observe(viewLifecycleOwner, Observer {
+            binding.details=it
+        })
     }
+
 
 }

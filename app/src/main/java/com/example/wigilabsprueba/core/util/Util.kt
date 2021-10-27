@@ -44,6 +44,7 @@ class Util{
                     .placeholder(R.drawable.ic_baseline_refresh_24)
                     .error(R.drawable.ic_baseline_wifi_off_24)
                     .into(this)
+                this.visibility= View.VISIBLE
             }else{
                 this.visibility= View.GONE
             }

@@ -30,7 +30,8 @@ class Repository(
                                 movieEntityApi.popularity,
                                 "https://image.tmdb.org/t/p/original${movieEntityApi.poster_path}",
                                 movieEntityApi.release_date,
-                                movieEntityApi.vote_average
+                                movieEntityApi.vote_average,
+                                movieEntityApi.vote_count
                             )
                         })
                     return Result.Success("Succesfull")
@@ -49,4 +50,7 @@ class Repository(
     }
 
     fun getMoviesLocal() = localDatasource.findAllMovies()
+
+
+    fun getMovieById(id:Int)=localDatasource.findMovieById(id)
 }

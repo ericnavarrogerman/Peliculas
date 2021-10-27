@@ -15,4 +15,5 @@ data class MoviesEntityRom(
     @ColumnInfo(name = "poster_image")var poster_path: String,
     @ColumnInfo(name = "release_date")var release_date: String,
     @ColumnInfo(name = "score")var vote_average: Float,
+    @ColumnInfo(name = "vote_count") var vote_count:Int
 )

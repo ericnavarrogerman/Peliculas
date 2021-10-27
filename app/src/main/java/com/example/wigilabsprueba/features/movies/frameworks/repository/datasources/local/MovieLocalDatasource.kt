@@ -15,7 +15,7 @@ class MovieLocalDatasource @Inject constructor(applicationContext: Context) {
     ).build()
 
 
-    fun findMovieById(id:Int)=db.moviesDao().findMovieById(id)
+    fun findMovieById(id:Int)=db.moviesDao().findMovieById(id).distinctUntilChanged()
 
     fun findAllMovies()=db.moviesDao().findAllMovies().distinctUntilChanged()
 
