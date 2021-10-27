@@ -7,7 +7,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "Movies")
 data class MoviesEntityRom(
-    @PrimaryKey var id: Int,
+    @PrimaryKey(autoGenerate = true) var id:Int=0,
+    @ColumnInfo(name = "id_service") var id_service: Int,
     @ColumnInfo(name = "backdrop_image") var backdrop_path: String,
     @ColumnInfo(name = "title") var original_title: String,
     @ColumnInfo(name = "description") var overview: String,

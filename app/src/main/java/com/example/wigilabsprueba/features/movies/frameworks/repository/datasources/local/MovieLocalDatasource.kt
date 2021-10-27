@@ -3,6 +3,7 @@ package com.example.wigilabsprueba.features.movies.frameworks.repository.datasou
 import android.content.Context
 import androidx.room.Room
 import com.example.wigilabsprueba.features.movies.frameworks.model.MoviesEntityRom
+import com.example.wigilabsprueba.features.movies.frameworks.model.PagingEntityRom
 import kotlinx.coroutines.flow.distinctUntilChanged
 import javax.inject.Inject
 
@@ -21,6 +22,9 @@ class MovieLocalDatasource @Inject constructor(applicationContext: Context) {
 
     suspend fun deleteMovies(movies:MoviesEntityRom)=db.moviesDao().deleteMovies(movies)
 
-    suspend fun InsertAllMovies(movies:List<MoviesEntityRom>)=db.moviesDao().InsertAllMovies(movies)
+    suspend fun insertAllMovies(movies:List<MoviesEntityRom>)=db.moviesDao().InsertAllMovies(movies)
 
+    suspend fun insertPaging(pagingEntityRom: PagingEntityRom)=db.moviesDao().InsertPaging(pagingEntityRom)
+
+    fun findPaggin(id: Int)=db.moviesDao().findPagingById(id)
 }

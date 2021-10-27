@@ -22,7 +22,7 @@ interface MovieService {
     suspend fun getAllMovies(
         @Query(QUERY_API_KEY) apiKey:String= API_KEY,
         @Query(QUERY_LANGUAGE)language:String="en-US",
-        @Query(QUERY_PAGINATION) page:String
+        @Query(QUERY_PAGINATION) page:Int
     ):Response<ResponseService>
 
 

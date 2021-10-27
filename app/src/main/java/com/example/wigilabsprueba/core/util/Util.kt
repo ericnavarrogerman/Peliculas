@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.wigilabsprueba.R
 import com.google.android.material.snackbar.Snackbar
 import java.time.temporal.TemporalAmount
@@ -41,6 +42,7 @@ class Util{
             if(url!=null){
                 Glide.with(this.context)
                     .load(url)
+                    .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                     .placeholder(R.drawable.ic_baseline_refresh_24)
                     .error(R.drawable.ic_baseline_wifi_off_24)
                     .into(this)

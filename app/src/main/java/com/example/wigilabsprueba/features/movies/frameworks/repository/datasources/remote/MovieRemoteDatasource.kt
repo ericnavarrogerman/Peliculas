@@ -38,7 +38,7 @@ class MovieRemoteDatasource{
     }
 
 
-    suspend fun getAllPopularMoviesByPageId(page:String)=apiInterface.getAllMovies(page = page)
+    suspend fun getAllPopularMoviesByPageId(page:Int)=apiInterface.getAllMovies(page = page)
 
 
 }

@@ -4,5 +4,5 @@ data class PagingDetails(
     val page:Int,
     var total_pages:Int,
     var total_results:Int,
-    var errors:List<String>
+    var errors:String
 )

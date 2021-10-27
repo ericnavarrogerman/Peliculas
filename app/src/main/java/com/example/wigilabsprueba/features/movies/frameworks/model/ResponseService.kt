@@ -10,7 +10,3 @@ data class ResponseService(
     var total_results:Int
 
 )
-
-data class ResponseServiceErrorPageLimit(
-    var errors:List<String>
-)

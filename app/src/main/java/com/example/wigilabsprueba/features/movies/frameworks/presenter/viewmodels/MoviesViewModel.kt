@@ -36,9 +36,8 @@ class MoviesViewModel @Inject constructor(
     fun fecthFromWebService(){
         viewModelScope.launch (Dispatchers.IO){
          var result =fecthFromWebService.fecthFromWebService()
-           if (result is Result.Error){
-                _result.postValue(result)
-           }
+            _result.postValue(result)
+
         }
     }
 
@@ -55,7 +54,7 @@ class MoviesViewModel @Inject constructor(
               _movies.postValue(movies.map { moviesEntityRom ->
 
                   MovieItem(
-                      moviesEntityRom.id,
+                      moviesEntityRom.id_service,
                       moviesEntityRom.poster_path,
                       moviesEntityRom.original_title,
                       moviesEntityRom.overview.cut(90)
