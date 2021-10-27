@@ -20,8 +20,6 @@ class MovieLocalDatasource @Inject constructor(applicationContext: Context) {
 
     fun findAllMovies()=db.moviesDao().findAllMovies().distinctUntilChanged()
 
-    suspend fun deleteMovies(movies:MoviesEntityRom)=db.moviesDao().deleteMovies(movies)
-
     suspend fun insertAllMovies(movies:List<MoviesEntityRom>)=db.moviesDao().InsertAllMovies(movies)
 
     suspend fun insertPaging(pagingEntityRom: PagingEntityRom)=db.moviesDao().InsertPaging(pagingEntityRom)

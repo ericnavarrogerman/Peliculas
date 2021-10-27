@@ -1,9 +1,9 @@
-package com.example.wigilabsprueba.features.movies.frameworks.model
+package com.example.wigilabsprueba.features.movies.entities
 
 import com.example.wigilabsprueba.features.movies.entities.MovieEntity
 
 
-data class ResponseService(
+data class PagingEntity(
     var page:Int,
     var results:List<MovieEntity>,
     var total_pages:Int,

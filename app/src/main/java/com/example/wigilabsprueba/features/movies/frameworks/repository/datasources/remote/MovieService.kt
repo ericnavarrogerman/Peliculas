@@ -1,7 +1,7 @@
 package com.example.wigilabsprueba.features.movies.frameworks.repository.datasources.remote
 
 
-import com.example.wigilabsprueba.features.movies.frameworks.model.ResponseService
+import com.example.wigilabsprueba.features.movies.entities.PagingEntity
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -23,7 +23,7 @@ interface MovieService {
         @Query(QUERY_API_KEY) apiKey:String= API_KEY,
         @Query(QUERY_LANGUAGE)language:String="en-US",
         @Query(QUERY_PAGINATION) page:Int
-    ):Response<ResponseService>
+    ):Response<PagingEntity>
 
 
 
