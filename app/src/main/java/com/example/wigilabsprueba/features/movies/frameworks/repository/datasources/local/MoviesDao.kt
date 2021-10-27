@@ -9,13 +9,13 @@ import kotlinx.coroutines.flow.Flow
 interface MoviesDao {
 
    @Query("SELECT * FROM Movies WHERE id=:id")
-   suspend fun findMovieById(id:Int): Flow<MoviesEntityRom>
+    fun findMovieById(id:Int): Flow<MoviesEntityRom>
 
    @Query("SELECT * FROM movies")
-   suspend fun findAllMovies():Flow<List<MoviesEntityRom>>
+    fun findAllMovies():Flow<List<MoviesEntityRom>>
 
    @Delete
-   suspend fun deleteMovies(users: MoviesEntityRom):List<Long>
+   suspend fun deleteMovies(users: MoviesEntityRom)
 
    @Insert(onConflict = OnConflictStrategy.IGNORE)
    suspend fun InsertAllMovies( users: List<MoviesEntityRom>):List<Long>

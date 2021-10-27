@@ -1,14 +1,21 @@
 package com.example.wigilabsprueba.features.movies.frameworks.presenter.ui
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.RecyclerView
 import com.example.wigilabsprueba.R
+import com.example.wigilabsprueba.core.util.notifyErrorWithAction
 import com.example.wigilabsprueba.databinding.MoviesFragmentBinding
+import com.example.wigilabsprueba.features.movies.frameworks.model.MovieItem
+import com.example.wigilabsprueba.features.movies.frameworks.model.Result
+import com.example.wigilabsprueba.features.movies.frameworks.presenter.adapters.AdapterMovies
 import com.example.wigilabsprueba.features.movies.frameworks.presenter.viewmodels.MoviesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,9 +39,31 @@ class MoviesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var adapterMovies=AdapterMovies(this)
+        val decoration: RecyclerView.ItemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+        binding.rvMovies.apply {
+            adapter=adapterMovies
+            addItemDecoration(decoration)
+        }
 
+
+        model.fecthFromWebService()
         model.getMovies()
 
+        model.result.observe(viewLifecycleOwner, Observer {
+            var result=it as Result.Error
+            result.exception.message?.let { it1 -> notifyErrorWithAction(it1,"Reload",model::fecthFromWebService) }
+        })
+
+        model.movies.observe(viewLifecycleOwner, Observer {
+            adapterMovies.setListMovies(it)
+        })
+
+    }
+
+    fun gotoDetails(item:MovieItem){
+        val accion=MoviesFragmentDirections.actionMoviesFragmentToMovieDetailsFragment(item.id)
+        findNavController().navigate(accion)
     }
 
 

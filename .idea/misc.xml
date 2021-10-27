@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/Wigilabsprueba/app/src/main/res/drawable/ic_baseline_refresh_24.xml" value="0.30416666666666664" />
+        <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/Wigilabsprueba/app/src/main/res/drawable/ic_baseline_wifi_off_24.xml" value="0.30416666666666664" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/Wigilabsprueba/app/src/main/res/layout/activity_main.xml" value="0.35625" />
+        <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/Wigilabsprueba/app/src/main/res/layout/item_list.xml" value="0.28802083333333334" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/Wigilabsprueba/app/src/main/res/layout/movie_details_fragment.xml" value="0.35625" />
-        <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/Wigilabsprueba/app/src/main/res/layout/movies_fragment.xml" value="0.35625" />
+        <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/Wigilabsprueba/app/src/main/res/layout/movies_fragment.xml" value="0.25" />
       </map>
     </option>
   </component>

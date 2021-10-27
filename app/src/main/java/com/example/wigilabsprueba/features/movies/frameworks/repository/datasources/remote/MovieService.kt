@@ -10,6 +10,7 @@ interface MovieService {
 
     companion object{
         const val BASE_URL="https://api.themoviedb.org/"
+        const val BASE_URL_IMAGE="https://image.tmdb.org/t/p/original"
         const val GET_POPULAR_MOVIES_PATH="3/movie/popular"
         const val API_KEY="09963e300150f9831c46a1828a82a984"
         const val QUERY_API_KEY="api_key"

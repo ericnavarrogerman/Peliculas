@@ -1,9 +1,9 @@
-package com.example.wigilabsprueba.features.movies.frameworks.model
+package com.example.wigilabsprueba.features.movies.entities
 
 import androidx.room.Entity
 
 
-data class MovieEntityApi(
+data class MovieEntity(
     var adult:Boolean,
     var backdrop_path:String,
     var genre_ids:List<Int>,

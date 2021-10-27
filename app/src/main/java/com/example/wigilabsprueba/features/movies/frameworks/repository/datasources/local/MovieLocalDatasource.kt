@@ -3,18 +3,21 @@ package com.example.wigilabsprueba.features.movies.frameworks.repository.datasou
 import android.content.Context
 import androidx.room.Room
 import com.example.wigilabsprueba.features.movies.frameworks.model.MoviesEntityRom
+import kotlinx.coroutines.flow.distinctUntilChanged
+import javax.inject.Inject
 
 
-class MovieLocalDatasource(applicationContext: Context) {
+class MovieLocalDatasource @Inject constructor(applicationContext: Context) {
 
-    val db = Room.databaseBuilder(
+    private val db = Room.databaseBuilder(
         applicationContext,
         AppDatabase::class.java, "database-movies"
     ).build()
 
-    suspend fun findMovieById(id:Int)=db.moviesDao().findMovieById(id)
 
-    suspend fun findAllMovies()=db.moviesDao().findAllMovies()
+    fun findMovieById(id:Int)=db.moviesDao().findMovieById(id)
+
+    fun findAllMovies()=db.moviesDao().findAllMovies().distinctUntilChanged()
 
     suspend fun deleteMovies(movies:MoviesEntityRom)=db.moviesDao().deleteMovies(movies)
 

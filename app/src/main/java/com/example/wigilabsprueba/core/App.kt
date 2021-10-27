@@ -1,4 +1,4 @@
-package com.example.wigilabsprueba
+package com.example.wigilabsprueba.core
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
